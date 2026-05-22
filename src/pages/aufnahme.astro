@@ -1,0 +1,118 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const steps = [
+  {
+    number: '01',
+    title: 'Bewerbungsformular ausfüllen',
+    desc: 'Fülle das Online-Formular aus und erzähl uns ein wenig über dich, deine Interessen und warum du Teil des MHN werden möchtest.',
+  },
+  {
+    number: '02',
+    title: 'Prüfung der Bewerbung',
+    desc: 'Unser Team prüft deine Bewerbung sorgfältig. Wir schauen, ob du gut zur Gemeinschaft passt und welche Beiträge du einbringen möchtest.',
+  },
+  {
+    number: '03',
+    title: 'Benachrichtigung',
+    desc: 'Du erhältst eine Rückmeldung zu deiner Bewerbung. Bei positiver Entscheidung heißen wir dich herzlich im MHN willkommen!',
+  },
+];
+
+const perks = [
+  { icon: '🎓', title: 'Mind-Akademie', desc: 'Zugang zur jährlichen Hauptveranstaltung mit 250+ Teilnehmenden' },
+  { icon: '🌍', title: 'Regionale Gruppen', desc: 'Treffen mit Gleichgesinnten in deiner Hochschulstadt' },
+  { icon: '🗣️', title: 'Diskussionslisten', desc: 'Aktiver Austausch in thematischen E-Mail-Listen' },
+  { icon: '📖', title: 'Wiki & Ressourcen', desc: 'Zugang zum internen Wissensspeicher und Netzwerk' },
+  { icon: '⛺', title: 'MHN-Camp', desc: 'Teilnahme am sommerlichen Gemeinschaftstreffen' },
+  { icon: '🤝', title: 'Mitgestaltung', desc: 'Aktive Mitgestaltung der Gemeinschaft und Veranstaltungen' },
+];
+---
+
+<Layout
+  title="Mitglied werden – MHN"
+  description="Werde Mitglied im Mind-Hochschul-Netzwerk und werde Teil einer lebendigen Gemeinschaft."
+>
+  <!-- Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-[#1e3a5f] to-[#2d5a9e] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-blue-200 text-sm font-medium mb-4">
+        Mitgliedschaft
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Werde Mitglied</h1>
+      <p class="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
+        Tritt einer Gemeinschaft neugieriger, engagierter Menschen bei und gestalte das MHN aktiv mit.
+      </p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Was du bekommst</span>
+        <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f]">Vorteile einer Mitgliedschaft</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {perks.map((perk) => (
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-blue-50 transition-colors">
+            <div class="text-3xl shrink-0">{perk.icon}</div>
+            <div>
+              <h3 class="font-bold text-[#1e3a5f]">{perk.title}</h3>
+              <p class="text-gray-600 text-sm mt-0.5">{perk.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application steps -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Wie es funktioniert</span>
+        <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f]">Der Aufnahmeprozess</h2>
+        <p class="mt-4 text-gray-600">Einfach und unkompliziert – in drei Schritten zur Mitgliedschaft.</p>
+      </div>
+
+      <div class="space-y-6">
+        {steps.map((step) => (
+          <div class="flex gap-6 bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+            <div class="text-4xl font-extrabold text-[#e85d26]/20 shrink-0 font-mono">{step.number}</div>
+            <div>
+              <h3 class="text-lg font-bold text-[#1e3a5f] mb-1">{step.title}</h3>
+              <p class="text-gray-600 text-sm leading-relaxed">{step.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Application form prompt -->
+  <section class="py-20 bg-[#1e3a5f] text-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl font-bold mb-4">Bereit loszulegen?</h2>
+      <p class="text-blue-200 mb-8 leading-relaxed">
+        Wir freuen uns auf deine Bewerbung! Klicke auf den Button, um dich über das Mitgliederportal zu bewerben. Bei Fragen stehen wir dir gerne per Kontaktformular zur Verfügung.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="https://www.mind-hochschul-netzwerk.de/portal"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="px-8 py-4 rounded-xl bg-[#e85d26] text-white font-semibold text-lg hover:bg-[#f47a4a] transition-colors"
+        >
+          Zum Aufnahmeantrag
+        </a>
+        <a
+          href="/kontakt"
+          class="px-8 py-4 rounded-xl bg-white/10 text-white font-semibold text-lg hover:bg-white/20 transition-all border border-white/20"
+        >
+          Fragen? Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+</Layout>

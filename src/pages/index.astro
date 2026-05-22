@@ -1,0 +1,256 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const highlights = [
+  {
+    icon: '🎓',
+    title: 'Mind-Akademie',
+    description: 'Unser jährliches Hauptevent mit über 250 Teilnehmenden, 50+ Vorträgen und Workshops aus Natur- und Geisteswissenschaften, Wirtschaft und Technik.',
+    link: '/akademie',
+    linkLabel: 'Zur Akademie',
+  },
+  {
+    icon: '⛺',
+    title: 'MHN-Camp',
+    description: 'Die sommerliche Variante unserer Treffen – in Pfadfinder-Zelten, mit selbstorganisiertem Programm und großer Gemeinschaft.',
+    link: '/veranstaltungen',
+    linkLabel: 'Mehr erfahren',
+  },
+  {
+    icon: '🗣️',
+    title: 'Unconference',
+    description: 'Offene, kollaborative Formate, bei denen die Teilnehmenden selbst das Programm gestalten und Wissen auf Augenhöhe teilen.',
+    link: '/veranstaltungen',
+    linkLabel: 'Mehr erfahren',
+  },
+];
+
+const principles = [
+  { icon: '🤝', text: 'Aktives Engagement gibt Mitgestaltungsrechte' },
+  { icon: '💬', text: 'Klare Kommunikation über Zusagen und Absagen' },
+  { icon: '🧠', text: 'Konflikte werden persönlich – nicht per E-Mail – gelöst' },
+  { icon: '✅', text: 'Absagen werden akzeptiert, ohne Druck auszuüben' },
+  { icon: '🔨', text: 'Kritik kommt mit konkreter Hilfsbereitschaft' },
+  { icon: '🚀', text: 'Pragmatismus geht vor Perfektionismus' },
+];
+
+const stats = [
+  { value: '2001', label: 'Gegründet' },
+  { value: '250+', label: 'Mitglieder' },
+  { value: '50+', label: 'Events jährlich' },
+  { value: '23', label: 'Mind-Akademien' },
+];
+---
+
+<Layout title="MHN – Mind-Hochschul-Netzwerk" description="Eine Gemeinschaft neugieriger und engagierter Menschen, die lebenslang lernen und Wissen teilen.">
+
+  <!-- Hero -->
+  <section class="relative min-h-screen flex items-center bg-gradient-to-br from-[#1e3a5f] via-[#2d5a9e] to-[#1e3a5f] overflow-hidden pt-16">
+    <div class="absolute inset-0 overflow-hidden">
+      <div class="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-white/5 blur-3xl"></div>
+      <div class="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-[#e85d26]/10 blur-3xl"></div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-blue-200 text-sm font-medium mb-6 backdrop-blur-sm">
+        <span class="w-2 h-2 rounded-full bg-[#e85d26] animate-pulse"></span>
+        Nächste Mind-Akademie: Oktober 2026 in Mannheim
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-6">
+        Wissen teilen.<br />
+        <span class="text-[#e85d26]">Gemeinsam wachsen.</span>
+      </h1>
+
+      <p class="text-lg sm:text-xl text-blue-100 max-w-2xl mx-auto leading-relaxed mb-10">
+        Das Mind-Hochschul-Netzwerk ist eine Gemeinschaft neugieriger und engagierter Menschen aller Altersgruppen, die sich dem lebenslangen Lernen verschrieben haben.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/aufnahme"
+          class="px-8 py-4 rounded-xl bg-[#e85d26] text-white font-semibold text-lg hover:bg-[#f47a4a] transition-all hover:shadow-lg hover:shadow-orange-500/25 hover:-translate-y-0.5"
+        >
+          Mitglied werden
+        </a>
+        <a
+          href="/ueber-mhn"
+          class="px-8 py-4 rounded-xl bg-white/10 text-white font-semibold text-lg hover:bg-white/20 transition-all backdrop-blur-sm border border-white/20"
+        >
+          Mehr erfahren
+        </a>
+      </div>
+
+      <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-3xl sm:text-4xl font-extrabold text-white">{stat.value}</div>
+            <div class="text-blue-300 text-sm mt-1">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-blue-300 animate-bounce">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </div>
+  </section>
+
+  <!-- Mission -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Unsere Mission</span>
+          <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-[#1e3a5f] leading-tight">
+            Interdisziplinärer Austausch auf Augenhöhe
+          </h2>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Das MHN verbindet aufgeschlossene junge Menschen über Fächergrenzen hinweg. Wir glauben daran, dass die spannendsten Ideen an den Schnittstellen verschiedener Disziplinen entstehen.
+          </p>
+          <p class="mt-4 text-gray-600 leading-relaxed">
+            Von der Naturwissenschaft bis zu den Geisteswissenschaften, von Wirtschaft bis Technik – bei uns treffen sich Menschen, die Neugier und Engagement teilen.
+          </p>
+          <div class="mt-6">
+            <a
+              href="/ueber-mhn"
+              class="inline-flex items-center gap-2 text-[#1e3a5f] font-semibold hover:text-[#e85d26] transition-colors"
+            >
+              Mehr über uns
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-2xl bg-[#1e3a5f] p-6 text-white">
+            <div class="text-3xl mb-3">🌍</div>
+            <h3 class="font-bold mb-1">Regionale Gruppen</h3>
+            <p class="text-blue-200 text-sm">Treffen in Hochschulstädten deutschlandweit</p>
+          </div>
+          <div class="rounded-2xl bg-[#e85d26] p-6 text-white mt-6">
+            <div class="text-3xl mb-3">📚</div>
+            <h3 class="font-bold mb-1">Vielfältige Themen</h3>
+            <p class="text-orange-100 text-sm">Workshops, Seminare & Vorträge</p>
+          </div>
+          <div class="rounded-2xl bg-blue-50 p-6 text-[#1e3a5f]">
+            <div class="text-3xl mb-3">🎯</div>
+            <h3 class="font-bold mb-1">Selbstorganisiert</h3>
+            <p class="text-gray-600 text-sm">Von Mitgliedern, für Mitglieder</p>
+          </div>
+          <div class="rounded-2xl bg-gray-900 p-6 text-white mt-6">
+            <div class="text-3xl mb-3">💡</div>
+            <h3 class="font-bold mb-1">Innovativ</h3>
+            <p class="text-gray-300 text-sm">Neue Ideen und Formate willkommen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Activities -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Was wir tun</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-[#1e3a5f]">Unsere Formate</h2>
+        <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+          Von der großen Jahresveranstaltung bis zum entspannten Sommerlager – wir bieten vielfältige Möglichkeiten zum Kennenlernen und Vertiefen.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {highlights.map((item) => (
+          <div class="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex flex-col">
+            <div class="text-4xl mb-4">{item.icon}</div>
+            <h3 class="text-xl font-bold text-[#1e3a5f] mb-2">{item.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed flex-1">{item.description}</p>
+            <a
+              href={item.link}
+              class="mt-4 inline-flex items-center gap-1 text-[#e85d26] font-semibold text-sm hover:gap-2 transition-all"
+            >
+              {item.linkLabel}
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Next Academy Banner -->
+  <section class="py-16 bg-[#e85d26]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="text-orange-200 font-semibold text-sm uppercase tracking-wider mb-1">Nächste Veranstaltung</p>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white">24. Mind-Akademie 2026</h2>
+          <p class="text-orange-100 mt-1">
+            1.–4. Oktober 2026 · Mannheim · Thema: <em>„Ende und Anfang"</em>
+          </p>
+        </div>
+        <a
+          href="/akademie"
+          class="shrink-0 px-6 py-3 rounded-xl bg-white text-[#e85d26] font-semibold hover:bg-orange-50 transition-colors shadow-sm"
+        >
+          Jetzt informieren
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Wie wir zusammenarbeiten</span>
+        <h2 class="mt-2 text-3xl sm:text-4xl font-bold text-[#1e3a5f]">Unsere Grundsätze</h2>
+        <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+          Sechs Prinzipien prägen unsere Gemeinschaft und machen das MHN zu einem besonderen Ort für engagierte Menschen.
+        </p>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {principles.map((p) => (
+          <div class="flex items-start gap-3 p-4 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors">
+            <span class="text-2xl shrink-0">{p.icon}</span>
+            <p class="text-[#1e3a5f] font-medium text-sm leading-snug">{p.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-gradient-to-br from-[#1e3a5f] to-[#2d5a9e]">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4">
+        Bereit, Teil der Gemeinschaft zu werden?
+      </h2>
+      <p class="text-blue-200 text-lg mb-8 leading-relaxed">
+        Bewirb dich jetzt für eine Mitgliedschaft und werde Teil eines Netzwerks aus neugierigen, engagierten Menschen.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href="/aufnahme"
+          class="px-8 py-4 rounded-xl bg-[#e85d26] text-white font-semibold text-lg hover:bg-[#f47a4a] transition-all hover:shadow-lg hover:shadow-orange-500/25"
+        >
+          Jetzt bewerben
+        </a>
+        <a
+          href="/kontakt"
+          class="px-8 py-4 rounded-xl bg-white/10 text-white font-semibold text-lg hover:bg-white/20 transition-all border border-white/20"
+        >
+          Kontakt aufnehmen
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>

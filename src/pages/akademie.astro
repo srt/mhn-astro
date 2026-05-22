@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const topics = [
+  { label: 'Naturwissenschaften', icon: '🔬' },
+  { label: 'Geisteswissenschaften', icon: '📖' },
+  { label: 'Wirtschaft', icon: '📊' },
+  { label: 'Technik', icon: '⚙️' },
+  { label: 'Kunst & Kultur', icon: '🎨' },
+  { label: 'Gesellschaft', icon: '🌐' },
+];
+
+const faqs = [
+  {
+    q: 'Wer kann an der Mind-Akademie teilnehmen?',
+    a: 'Grundsätzlich alle MHN-Mitglieder. Auch Gäste können über eine begrenzte Anzahl an Gastplätzen teilnehmen.',
+  },
+  {
+    q: 'Wie hoch sind die Kosten?',
+    a: 'Die Akademie wird zu möglichst günstigen Konditionen für Studierende angeboten. Genaue Preise werden mit der Anmeldung bekannt gegeben.',
+  },
+  {
+    q: 'Kann ich selbst einen Vortrag oder Workshop anbieten?',
+    a: 'Ja! Ein Großteil des Programms wird von Mitgliedern selbst gestaltet. Einreichungen sind herzlich willkommen.',
+  },
+  {
+    q: 'Wo finden die Akademien statt?',
+    a: 'Die Veranstaltungsorte wechseln jährlich. 2026 findet die Akademie in Mannheim statt.',
+  },
+];
+---
+
+<Layout
+  title="Mind-Akademie – MHN"
+  description="Die jährliche Hauptveranstaltung des MHN: 250 Teilnehmende, 50+ Vorträge und Workshops."
+>
+  <!-- Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-[#1e3a5f] to-[#2d5a9e] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-blue-200 text-sm font-medium mb-4">
+        Jährliche Hauptveranstaltung
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Mind-Akademie</h1>
+      <p class="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
+        Vier Tage voller Wissen, Begegnung und Inspiration. Das Herzstück des Mind-Hochschul-Netzwerks.
+      </p>
+    </div>
+  </section>
+
+  <!-- Next academy highlight -->
+  <section class="py-12 bg-[#e85d26]">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div class="text-white">
+          <p class="text-orange-200 font-semibold text-sm uppercase tracking-wider mb-2">Nächste Veranstaltung</p>
+          <h2 class="text-3xl sm:text-4xl font-extrabold">24. Mind-Akademie</h2>
+          <div class="flex flex-wrap gap-4 mt-3 text-orange-100">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </svg>
+              1.–4. Oktober 2026
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+              Mannheim
+            </span>
+          </div>
+          <p class="mt-3 text-lg text-white font-semibold">Thema: „Ende und Anfang"</p>
+          <p class="text-orange-100 mt-1 text-sm max-w-xl">
+            Das diesjährige Thema erforscht Übergänge und Neuanfänge – biologisch, kulturell und technologisch. Was macht gute Abschlüsse aus? Wie entstehen neue Phasen?
+          </p>
+        </div>
+        <div class="shrink-0 text-center bg-white/10 rounded-2xl p-6 backdrop-blur-sm border border-white/20">
+          <p class="text-white/70 text-sm mb-2">Anmeldung über Newsletter</p>
+          <a
+            href="/kontakt"
+            class="inline-block px-6 py-3 rounded-xl bg-white text-[#e85d26] font-semibold hover:bg-orange-50 transition-colors"
+          >
+            Newsletter abonnieren
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to expect -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Was erwartet dich</span>
+        <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f]">Das Programm</h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '🎤', title: '50+ Vorträge & Workshops', desc: 'Von Mitgliedern und externen Gästen über alle Disziplinen hinweg.' },
+          { icon: '🤝', title: 'Vernetzung', desc: 'Begegnung mit 250+ Gleichgesinnten aus ganz Deutschland.' },
+          { icon: '🎭', title: 'Abendprogramm', desc: 'Lounge, Spielezimmer, kulturelle Events und geselliges Beisammensein.' },
+          { icon: '🍽️', title: 'Verpflegung', desc: 'Gemeinsame Mahlzeiten und Pausenangebote inklusive.' },
+          { icon: '💡', title: 'Selbstorganisiert', desc: 'Das Programm wird von Mitgliedern gestaltet – du kannst selbst beitragen.' },
+          { icon: '🌱', title: 'Alle Disziplinen', desc: 'Naturwissenschaft trifft Kunst trifft Technik trifft Philosophie.' },
+        ].map((item) => (
+          <div class="bg-gray-50 rounded-2xl p-6 hover:bg-blue-50 transition-colors">
+            <div class="text-3xl mb-3">{item.icon}</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1">{item.title}</h3>
+            <p class="text-gray-600 text-sm">{item.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Topics -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-bold text-[#1e3a5f]">Themengebiete</h2>
+        <p class="text-gray-600 mt-2">Vorträge und Workshops kommen aus einem breiten Spektrum an Disziplinen.</p>
+      </div>
+      <div class="flex flex-wrap justify-center gap-3">
+        {topics.map((t) => (
+          <span class="flex items-center gap-2 px-4 py-2 rounded-full bg-white border border-gray-200 text-[#1e3a5f] font-medium text-sm shadow-sm">
+            <span>{t.icon}</span>
+            {t.label}
+          </span>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-20 bg-white">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-[#1e3a5f]">Häufige Fragen</h2>
+      </div>
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="border border-gray-200 rounded-xl p-6">
+            <h3 class="font-semibold text-[#1e3a5f] mb-2">{faq.q}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-16 bg-[#1e3a5f] text-white text-center">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6">
+      <h2 class="text-2xl sm:text-3xl font-bold mb-4">Dabei sein im Oktober 2026</h2>
+      <p class="text-blue-200 mb-6">Werde Mitglied und sichere dir deinen Platz bei der nächsten Mind-Akademie.</p>
+      <a
+        href="/aufnahme"
+        class="inline-block px-8 py-4 rounded-xl bg-[#e85d26] text-white font-semibold text-lg hover:bg-[#f47a4a] transition-colors"
+      >
+        Jetzt Mitglied werden
+      </a>
+    </div>
+  </section>
+</Layout>

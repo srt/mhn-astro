@@ -1,0 +1,164 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const events = [
+  {
+    type: 'Hauptveranstaltung',
+    title: '24. Mind-Akademie',
+    date: '1.–4. Oktober 2026',
+    location: 'Mannheim',
+    theme: 'Ende und Anfang',
+    description: 'Unser jährliches Highlight: vier Tage voller Vorträge, Workshops und Begegnungen. Über 250 Teilnehmende aus allen akademischen Disziplinen.',
+    color: 'bg-[#1e3a5f]',
+    accentColor: 'text-blue-300',
+    link: '/akademie',
+  },
+  {
+    type: 'Sommerveranstaltung',
+    title: 'MHN-Camp 2026',
+    date: 'Sommer 2026',
+    location: 'Wird noch bekannt gegeben',
+    theme: 'Selbstorganisiert & entspannt',
+    description: 'Die sommerliche Alternative zur Akademie: in Pfadfinder-Zelten, mit offener Atmosphäre und selbstgestaltetem Programm.',
+    color: 'bg-green-700',
+    accentColor: 'text-green-300',
+    link: '/kontakt',
+  },
+];
+
+const formats = [
+  {
+    icon: '🎤',
+    title: 'Vorträge',
+    desc: 'Mitglieder und Gäste präsentieren ihre Forschung, Projekte und Ideen – kurz und prägnant oder ausführlich und interaktiv.',
+  },
+  {
+    icon: '🛠️',
+    title: 'Workshops',
+    desc: 'Praktische Einheiten, bei denen Teilnehmende selbst aktiv werden und neue Fähigkeiten erlernen.',
+  },
+  {
+    icon: '⚡',
+    title: 'Lightning Talks',
+    desc: 'Kurze, pointierte Präsentationen von 5–10 Minuten für spontane Ideen und schnelle Impulse.',
+  },
+  {
+    icon: '💬',
+    title: 'Diskussionsrunden',
+    desc: 'Moderierte Gespräche zu aktuellen Themen, bei denen alle Perspektiven eingebracht werden können.',
+  },
+  {
+    icon: '🎲',
+    title: 'Abendprogramm',
+    desc: 'Spiele, Lounge-Atmosphäre und informelles Kennenlernen – weil Netzwerken auch Spaß machen darf.',
+  },
+  {
+    icon: '🗺️',
+    title: 'Exkursionen',
+    desc: 'Ausflüge in die Umgebung und Besichtigungen, die den Austausch in neue Umgebungen verlagern.',
+  },
+];
+---
+
+<Layout
+  title="Veranstaltungen – MHN"
+  description="Kommende Veranstaltungen des Mind-Hochschul-Netzwerks: Mind-Akademie, MHN-Camp und mehr."
+>
+  <!-- Header -->
+  <section class="pt-32 pb-16 bg-gradient-to-b from-[#1e3a5f] to-[#2d5a9e] text-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="inline-block px-3 py-1 rounded-full bg-white/10 text-blue-200 text-sm font-medium mb-4">
+        Termine
+      </span>
+      <h1 class="text-4xl sm:text-5xl font-extrabold mb-4">Veranstaltungen</h1>
+      <p class="text-xl text-blue-100 leading-relaxed max-w-2xl mx-auto">
+        Von der großen Jahresveranstaltung bis zum entspannten Sommerlager – komm vorbei und lerne die Gemeinschaft kennen.
+      </p>
+    </div>
+  </section>
+
+  <!-- Upcoming events -->
+  <section class="py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Kalender</span>
+        <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f]">Kommende Veranstaltungen</h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-6">
+        {events.map((ev) => (
+          <div class={`${ev.color} rounded-2xl p-8 text-white flex flex-col`}>
+            <span class={`text-xs font-semibold uppercase tracking-wider ${ev.accentColor} mb-3`}>{ev.type}</span>
+            <h3 class="text-2xl font-bold mb-1">{ev.title}</h3>
+            <p class="font-medium text-white/80 mb-4">
+              {ev.theme && <em>„{ev.theme}"</em>}
+            </p>
+            <div class="flex flex-wrap gap-4 text-sm text-white/70 mb-4">
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                {ev.date}
+              </span>
+              <span class="flex items-center gap-1.5">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                </svg>
+                {ev.location}
+              </span>
+            </div>
+            <p class="text-white/80 text-sm leading-relaxed flex-1">{ev.description}</p>
+            <a
+              href={ev.link}
+              class="mt-6 inline-flex items-center gap-2 text-white font-semibold text-sm hover:gap-3 transition-all"
+            >
+              Mehr erfahren
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Formats -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="text-center mb-12">
+        <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Vielfalt</span>
+        <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f]">Unsere Veranstaltungsformate</h2>
+        <p class="mt-4 text-gray-600 max-w-xl mx-auto">
+          Bei unseren Treffen gibt es für jeden etwas – ob du zuhören, mitmachen oder selbst gestalten möchtest.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {formats.map((f) => (
+          <div class="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+            <div class="text-3xl mb-3">{f.icon}</div>
+            <h3 class="font-bold text-[#1e3a5f] mb-1">{f.title}</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Regional groups -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+      <span class="text-[#e85d26] font-semibold text-sm uppercase tracking-wider">Vor Ort</span>
+      <h2 class="mt-2 text-3xl font-bold text-[#1e3a5f] mb-4">Regionale Gruppen</h2>
+      <p class="text-gray-600 leading-relaxed mb-6">
+        Neben den großen Jahresveranstaltungen organisieren Mitglieder regelmäßige Treffen in Hochschulstädten ganz Deutschland. Von Berlin bis München, von Hamburg bis Frankfurt – finde deine lokale MHN-Gruppe.
+      </p>
+      <a
+        href="/kontakt"
+        class="inline-block px-6 py-3 rounded-xl bg-[#1e3a5f] text-white font-semibold hover:bg-[#2d5a9e] transition-colors"
+      >
+        Lokale Gruppe finden
+      </a>
+    </div>
+  </section>
+</Layout>
