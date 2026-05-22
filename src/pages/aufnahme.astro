@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { u } from '../lib/url';
 
 const steps = [
   {
@@ -107,7 +108,7 @@ const perks = [
           Zum Aufnahmeantrag
         </a>
         <a
-          href="/kontakt"
+          href={u('/kontakt')}
           class="px-8 py-4 rounded-xl bg-white/10 text-white font-semibold text-lg hover:bg-white/20 transition-all border border-white/20"
         >
           Fragen? Kontakt aufnehmen

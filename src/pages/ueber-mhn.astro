@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { u } from '../lib/url';
 
 const timeline = [
   { year: '2001', event: 'Gründung als Mensa-Projekt unter dem Namen "Mind-Hochschul-Netzwerk"' },
@@ -155,7 +156,7 @@ const principles = [
       <h2 class="text-2xl sm:text-3xl font-bold mb-4">Werde Teil unserer Geschichte</h2>
       <p class="text-blue-200 mb-6">Bewirb dich jetzt und gestalte das MHN aktiv mit.</p>
       <a
-        href="/aufnahme"
+        href={u('/aufnahme')}
         class="inline-block px-8 py-4 rounded-xl bg-[#e85d26] text-white font-semibold text-lg hover:bg-[#f47a4a] transition-colors"
       >
         Jetzt bewerben

@@ -1,10 +1,12 @@
 ---
+import { u } from '../lib/url';
+
 const nav = [
-  { label: 'Über MHN', href: '/ueber-mhn' },
-  { label: 'Mitgliedschaft', href: '/aufnahme' },
-  { label: 'Mind-Akademie', href: '/akademie' },
-  { label: 'Veranstaltungen', href: '/veranstaltungen' },
-  { label: 'Kontakt', href: '/kontakt' },
+  { label: 'Über MHN', href: u('/ueber-mhn') },
+  { label: 'Mitgliedschaft', href: u('/aufnahme') },
+  { label: 'Mind-Akademie', href: u('/akademie') },
+  { label: 'Veranstaltungen', href: u('/veranstaltungen') },
+  { label: 'Kontakt', href: u('/kontakt') },
 ];
 ---
 
@@ -12,7 +14,7 @@ const nav = [
   <div class="max-w-6xl mx-auto px-4 sm:px-6">
     <div class="flex items-center justify-between h-16">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-2 group">
+      <a href={u('/')} class="flex items-center gap-2 group">
         <div class="w-9 h-9 rounded-xl bg-[#1e3a5f] flex items-center justify-center text-white font-bold text-lg group-hover:bg-[#2d5a9e] transition-colors">
           M
         </div>
@@ -33,7 +35,7 @@ const nav = [
           </a>
         ))}
         <a
-          href="/aufnahme"
+          href={u('/aufnahme')}
           class="ml-3 px-4 py-2 rounded-lg bg-[#e85d26] text-white text-sm font-semibold hover:bg-[#f47a4a] transition-colors"
         >
           Mitglied werden
@@ -69,7 +71,7 @@ const nav = [
         </a>
       ))}
       <a
-        href="/aufnahme"
+        href={u('/aufnahme')}
         class="mt-2 px-4 py-2.5 rounded-lg bg-[#e85d26] text-white text-sm font-semibold text-center hover:bg-[#f47a4a] transition-colors"
       >
         Mitglied werden

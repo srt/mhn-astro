@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { u } from '../lib/url';
 ---
 
 <Layout
@@ -140,9 +141,9 @@ import Layout from '../layouts/Layout.astro';
               Alle rechtlichen Informationen findest du auf unseren entsprechenden Seiten.
             </p>
             <div class="flex gap-3 text-sm">
-              <a href="/impressum" class="text-[#e85d26] font-semibold hover:underline">Impressum</a>
+              <a href={u('/impressum')} class="text-[#e85d26] font-semibold hover:underline">Impressum</a>
               <span class="text-gray-300">·</span>
-              <a href="/datenschutz" class="text-[#e85d26] font-semibold hover:underline">Datenschutz</a>
+              <a href={u('/datenschutz')} class="text-[#e85d26] font-semibold hover:underline">Datenschutz</a>
             </div>
           </div>
         </div>

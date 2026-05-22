@@ -1,4 +1,5 @@
 ---
+import { u } from '../lib/url';
 ---
 
 <footer class="bg-[#1e3a5f] text-white">
@@ -21,12 +22,12 @@
       <div>
         <h3 class="font-semibold text-sm uppercase tracking-wider text-blue-300 mb-3">Navigation</h3>
         <ul class="space-y-2 text-sm text-blue-200">
-          <li><a href="/" class="hover:text-white transition-colors">Startseite</a></li>
-          <li><a href="/ueber-mhn" class="hover:text-white transition-colors">Über MHN</a></li>
-          <li><a href="/aufnahme" class="hover:text-white transition-colors">Mitgliedschaft</a></li>
-          <li><a href="/akademie" class="hover:text-white transition-colors">Mind-Akademie</a></li>
-          <li><a href="/veranstaltungen" class="hover:text-white transition-colors">Veranstaltungen</a></li>
-          <li><a href="/kontakt" class="hover:text-white transition-colors">Kontakt</a></li>
+          <li><a href={u('/')} class="hover:text-white transition-colors">Startseite</a></li>
+          <li><a href={u('/ueber-mhn')} class="hover:text-white transition-colors">Über MHN</a></li>
+          <li><a href={u('/aufnahme')} class="hover:text-white transition-colors">Mitgliedschaft</a></li>
+          <li><a href={u('/akademie')} class="hover:text-white transition-colors">Mind-Akademie</a></li>
+          <li><a href={u('/veranstaltungen')} class="hover:text-white transition-colors">Veranstaltungen</a></li>
+          <li><a href={u('/kontakt')} class="hover:text-white transition-colors">Kontakt</a></li>
         </ul>
       </div>
 
@@ -34,8 +35,8 @@
       <div>
         <h3 class="font-semibold text-sm uppercase tracking-wider text-blue-300 mb-3">Rechtliches</h3>
         <ul class="space-y-2 text-sm text-blue-200">
-          <li><a href="/impressum" class="hover:text-white transition-colors">Impressum</a></li>
-          <li><a href="/datenschutz" class="hover:text-white transition-colors">Datenschutz</a></li>
+          <li><a href={u('/impressum')} class="hover:text-white transition-colors">Impressum</a></li>
+          <li><a href={u('/datenschutz')} class="hover:text-white transition-colors">Datenschutz</a></li>
           <li>
             <a
               href="https://wiki.mind-hochschul-netzwerk.de/s/327084de-2f86-43bc-8a5f-045a1283b55a"

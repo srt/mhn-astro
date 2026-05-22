@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { u } from '../lib/url';
 
 const events = [
   {
@@ -11,7 +12,7 @@ const events = [
     description: 'Unser jährliches Highlight: vier Tage voller Vorträge, Workshops und Begegnungen. Über 250 Teilnehmende aus allen akademischen Disziplinen.',
     color: 'bg-[#1e3a5f]',
     accentColor: 'text-blue-300',
-    link: '/akademie',
+    link: u('/akademie'),
   },
   {
     type: 'Sommerveranstaltung',
@@ -22,7 +23,7 @@ const events = [
     description: 'Die sommerliche Alternative zur Akademie: in Pfadfinder-Zelten, mit offener Atmosphäre und selbstgestaltetem Programm.',
     color: 'bg-green-700',
     accentColor: 'text-green-300',
-    link: '/kontakt',
+    link: u('/kontakt'),
   },
 ];
 
@@ -154,7 +155,7 @@ const formats = [
         Neben den großen Jahresveranstaltungen organisieren Mitglieder regelmäßige Treffen in Hochschulstädten ganz Deutschland. Von Berlin bis München, von Hamburg bis Frankfurt – finde deine lokale MHN-Gruppe.
       </p>
       <a
-        href="/kontakt"
+        href={u('/kontakt')}
         class="inline-block px-6 py-3 rounded-xl bg-[#1e3a5f] text-white font-semibold hover:bg-[#2d5a9e] transition-colors"
       >
         Lokale Gruppe finden

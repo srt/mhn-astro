@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import { u } from '../lib/url';
 ---
 
 <Layout title="Impressum – MHN" description="Impressum des Mind-Hochschul-Netzwerks.">
@@ -17,7 +18,7 @@ import Layout from '../layouts/Layout.astro';
         <div>
           <h2 class="text-lg font-semibold text-[#1e3a5f] mb-2">Kontakt</h2>
           <p>
-            Für Kontaktanfragen nutze bitte unser <a href="/kontakt" class="text-[#e85d26] hover:underline">Kontaktformular</a>.
+            Für Kontaktanfragen nutze bitte unser <a href={u('/kontakt')} class="text-[#e85d26] hover:underline">Kontaktformular</a>.
           </p>
         </div>
         <div>
